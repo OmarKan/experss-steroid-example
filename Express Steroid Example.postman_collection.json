@@ -1,0 +1,155 @@
+{
+	"info": {
+		"_postman_id": "8c501c2d-3e73-5a1b-abd7-3011587804c5",
+		"name": "Express Steroid Example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Department",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Human Resources\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/departments/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"departments",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update department",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"HR department\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/departments/5aae424b58c274b69d0c165b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"departments",
+						"5aae424b58c274b69d0c165b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Omar Kanawati\",\n\t\"joiningDate\": \"2018-01-02\",\n\t\"departmentId\": \"5aae424b58c274b69d0c165b\",\n\t\"jobTitle\": \"Engineer\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/employees/?",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees",
+						""
+					],
+					"query": [
+						{
+							"key": "var1",
+							"value": "Hala,Somethingelse",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Employees",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/employees/?skip=0&limit=100&sortBy=-joiningDate,name&joiningDateRange=2017-01-01, 2019-01-01&departments=5aaa2c4f1b45b4b86f372ab0,5aae424b58c274b69d0c165b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"employees",
+						""
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "partialPhoneNumber",
+							"value": "00966564809498",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "-joiningDate,name"
+						},
+						{
+							"key": "joiningDateRange",
+							"value": "2017-01-01, 2019-01-01"
+						},
+						{
+							"key": "departments",
+							"value": "5aaa2c4f1b45b4b86f372ab0,5aae424b58c274b69d0c165b"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
